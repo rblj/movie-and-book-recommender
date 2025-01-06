@@ -1,22 +1,20 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [],
   content: [
     "./app/**/*.{js,ts,jsx,tsx}",
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
-
-    // Or if using `src` directory:
-    "./src/**/*.{js,ts,jsx,tsx}",
   ],
   darkMode: "class",
   theme: {
     extend: {
       fontFamily: {
-        Ubuntu: "'Ubuntu'",
-        OpenSans: "'Open Sans'",
+        Ubuntu: "'Ubuntu', sans-serif",
+        OpenSans: "'Open Sans', sans-serif",
       },
     },
   },
-  plugins: [require("@tailwindcss/line-clamp"), require("@tailwindcss/forms")],
+  plugins: [
+    require("@tailwindcss/line-clamp"),
+    require("@tailwindcss/forms"),
+  ],
 };

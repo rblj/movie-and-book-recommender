@@ -46,16 +46,18 @@ Include a brief description of each book and the author. The format should be as
     });
 
     if (!response.ok) {
+      toast.error("Failed to generate recommendations. Please try again.");
       setLoading(false);
-      console.error(response.statusText);
       return;
-    }
+   }   
 
     const data = response.body;
 
     if (!data) {
+      toast.error("No data received from the server.");
+      setLoading(false);
       return;
-    }
+   }   
 
     const reader = data.getReader();
 
@@ -230,7 +232,7 @@ Include a brief description of each book and the author. The format should be as
                           cy="12"
                           r="10"
                           stroke="currentColor"
-                          stroke-width="4"
+                          strokeWidth="4"
                         ></circle>
                         <path
                           className="opacity-75"
